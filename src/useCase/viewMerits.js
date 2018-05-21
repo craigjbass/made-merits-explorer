@@ -1,22 +1,6 @@
 // @flow
 
-type PresentableMerit = {
-    date: string,
-    comment: string,
-    from: string,
-    to: string
-}
-type PresentableMerits = {
-    merits: PresentableMerit[]
-}
-
-export interface ViewMeritsPresenter {
-    present(merits: PresentableMerits): void;
-}
-
-interface ViewMeritsUseCase {
-    execute(presenter: ViewMeritsPresenter): void;
-}
+import { ViewMeritsPresenter, ViewMeritsUseCase } from '../boundary/viewMerits'
 
 export default class ViewMerits implements ViewMeritsUseCase {
     execute (presenter: ViewMeritsPresenter) {
